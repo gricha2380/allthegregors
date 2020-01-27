@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="shortcut icon" href="/img/favicon.png">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <div id="upper">
+    <div id="title"></div>
+    <div id="controls">
+      <div class="select">
+        <label for="year">Select Year</label>
+        <select id="year">
+          <option value="all">All</option>
+          <option value="2019" selected>2019</option>
+          <option value="2018">2018</option>
+        </select>
+      </div>
+      <div id="random"></div>
+    </div>
+  </div>
+  <div id="lower">
+    <div class="its_gregor" data-year="2019">
+      <div class="info">
+        <div class="year">2018</div>
+        <div class="title">Gregor Universe</div>
+        <div class="description">
+            Evolution of my time at Socrata and a celebration of the delightful show known as Steven Universe. 
+        </div>
+      </div>
+      <div class="avatar" id="year_2019"></div>
+    </div>
+  </div>
+  
+
+  <script src="js/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-17373319-26"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-17373319-26');
+</script>
+
+</body>
+
+</html>
