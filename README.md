@@ -1,4 +1,3 @@
 # To Do
-* populate dropdown menu with year data from API
-* Write function for All
+* Write function for random
 * Create Yearbook shot

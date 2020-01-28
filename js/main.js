@@ -43,19 +43,17 @@ const loadGregor = () => {
   let year = document.querySelector('#year').value;
   console.log('year is', year)
   
-  const processYear = (value) => {
-    console.log('year value inner', year)
+  raw_api.forEach(element => {
+    all_gregors[element.year.S] = {
+      "year": element.year.S,
+      "description": element.description.S,
+      "title": element.title.S,
+    };
+  });
+  console.log('all gregor year after loop', all_gregors)
 
-    raw_api.forEach(element => {
-      all_gregors[element.year.S] = {
-        "year": element.year.S,
-        "description": element.description.S,
-        "title": element.title.S,
-      };
-    });
-
-    console.log('all gregor year after loop', all_gregors)
-    console.log('all gregor year value', all_gregors[year])
+  const process_year = (value) => {
+    console.log('all gregor current year value', all_gregors[year])
     console.log('all gregors', all_gregors)
     let content = `
     <div class="its_gregor" data-year="${year}">
@@ -71,12 +69,34 @@ const loadGregor = () => {
     `
     document.querySelector('#lower').innerHTML = content;
   }
+  
+  const process_all_years = () => {
+    let content = ``;
+    for (const element in all_gregors) {
+      console.log('this is element in all loop', element.title)
+
+      content += `
+      <div class="its_gregor" data-year="${all_gregors[element].year}">
+        <div class="info">
+          <div class="year">${all_gregors[element].year}</div>
+          <div class="title">${all_gregors[element].title}</div>
+          <div class="description">
+              ${all_gregors[element].description} 
+          </div>
+        </div>
+        <div class="avatar" id="year_${all_gregors[element].year}"></div>
+      </div>
+      `
+    }
+    document.querySelector('#lower').innerHTML = content;
+  }
 
   if (year === 'All') {
-    // processYear(all_gregors[year])
+    // process_year(all_gregors[year])
     console.log('you selected all years')
+    process_all_years()
   } else {
-    processYear(year)
+    process_year(year)
   }
 
 
