@@ -19,7 +19,7 @@ const saveGregors = (data) => {
   console.log('this is data from API', data)
   raw_api = data;
   loadMenu();
-  loadGregor();
+  processGregor();
 }
 
 const loadMenu = () => {
@@ -37,12 +37,8 @@ const loadMenu = () => {
   document.querySelector('#year').innerHTML = yearData;
 }
 
-const loadGregor = () => {
-  // check select menu value for year
-  console.log('loading a new year')
-  let year = document.querySelector('#year').value;
-  console.log('year is', year)
-  
+// run when raw data is grabbed from API
+const processGregor = () => {
   raw_api.forEach(element => {
     all_gregors[element.year.S] = {
       "year": element.year.S,
@@ -51,6 +47,24 @@ const loadGregor = () => {
     };
   });
   console.log('all gregor year after loop', all_gregors)
+
+}
+
+const loadGregor = (value) => {
+  // check select menu value for year
+  console.log('loading a new year')
+  let year;
+
+  if (value) {
+    console.log('custom year value provided')
+    year = value;
+    document.querySelector(`#year [value="${value}"]`).selected = true;
+
+  } else {
+    year = document.querySelector('#year').value;
+  }
+  console.log('year is', year)
+  
 
   const process_year = (value) => {
     console.log('all gregor current year value', all_gregors[year])
@@ -102,7 +116,19 @@ const loadGregor = () => {
 
 }
 
+const do_random = () => {
+  let keys = Object.keys(all_gregors)
+  let random = all_gregors[keys[ keys.length * Math.random() << 0]];
+  console.log('this is the random', random.year)
+  loadGregor(random.year);
+}
+
 document.querySelector('#year').addEventListener('change', (event)=>{
   console.log('you clicked the select menu')
   loadGregor();
+})
+
+document.querySelector('#random').addEventListener('click', (event)=>{
+  console.log('you clicked random');
+  do_random();
 })

@@ -1,3 +1,3 @@
 # To Do
-* Write function for random
+* Start page load with a random Gregor
 * Create Yearbook shot
