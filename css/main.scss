@@ -299,12 +299,12 @@ body {
 }
 
 #year {
-  background: none;
-  border: none;
-  background-color: rgba(0, 0, 0, .2);
-  padding: .5rem 1rem;
   -webkit-appearance: initial;
+  background: rgba(0, 0, 0, .2);
+  border: none;
   color: white;
+  min-width: 80px;
+  padding: .5rem 1rem;
   transition: .25s;
 
   &:hover {
@@ -315,13 +315,13 @@ body {
 
 #random {
   background-image: url('../img/refresh.svg');
-  height: 50px;
-  width: 50px;
-  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
   margin: 2rem auto 0;
   transition: .25s;
-  background-position: center;
+  width: 50px;
 
   &:hover {
     cursor: pointer;
@@ -331,7 +331,9 @@ body {
 
 .info {
   display: inline-block;
+  margin-right: 2rem;
   text-align: right;
+  width: 400px;
 
   .year {
     font-size: 1.5rem;
@@ -339,93 +341,60 @@ body {
   }
 
   .title {
-    display: inline-block;
     background: black;
-    padding: .25rem 1rem;
     border-radius: .5rem;
+    display: inline-block;
     font-size: 1.5rem;
+    padding: .25rem 1rem;
   }
 
   .description {
-    max-width: 400px;
     color: black;
     font-size: 1.2rem;
+    max-width: 400px;
     padding-top: .5rem;
   }
 }
 
 .avatar {
-  height: 500px;
-  width: 250px;
   background-position: center;
-  vertical-align: middle;
   background-repeat: no-repeat;
   background-size: contain;
+  color: black;
   display: inline-block;
+  height: 500px;
+  vertical-align: middle;
+  width: 250px;
 
   &#year_2019 {
     background-image: url('../img/gregors/2019.png');
-    color: black;
+  }
+  &#year_2018 {
+    background-image: url('../img/gregors/2018.png');
+  }
 
+  &#year_2017 {
+    background-image: url('../img/gregors/2017.png');
+  }
+  
+  &#year_2016 {
+    background-image: url('../img/gregors/2016.png');
+  }
+ 
+  &#year_2014 {
+    background-image: url('../img/gregors/2014.png');
+  }
+
+  &#year_2013 {
+    background-image: url('../img/gregors/2013.png');
+  }
+  &#year_2012 {
+    background-image: url('../img/gregors/2012.png');
+  }
+  &#year_2011 {
+    background-image: url('../img/gregors/2011.png');
+  }
+  &#year_2009 {
+    background-image: url('../img/gregors/2009.png');
   }
 }
-
-// .select {
-//   position: relative;
-
-//   select {
-//     display:none;
-//   }
-//   .select_selected {
-//     background-color: DodgerBlue;
-    
-//     /* Style the arrow inside the select element: */
-//     &:after {
-//       position: absolute;
-//       content: "";
-//       top: 14px;
-//       right: 10px;
-//       width: 0;
-//       height: 0;
-//       border: 6px solid transparent;
-//       border-color: #fff transparent transparent transparent;
-//     }
-    
-//     /* Point the arrow upwards when the select box is open (active): */
-//     &.select_arrow-active:after {
-//       border-color: transparent transparent #fff transparent;
-//       top: 7px;
-//     }
-//   }
-  
-  
-  
-//   /* style the items (options), including the selected item: */
-//   .select_items div,.select_selected {
-//     color: #ffffff;
-//     padding: 8px 16px;
-//     border: 1px solid transparent;
-//     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-//     cursor: pointer;
-//   }
-  
-//   /* Style items (options): */
-//   .select_items {
-//     position: absolute;
-//     background-color: DodgerBlue;
-//     top: 100%;
-//     left: 0;
-//     right: 0;
-//     z-index: 99;
-//   }
-  
-//   /* Hide the items when the select box is closed: */
-//   .select_hide {
-//     display: none;
-//   }
-  
-//   .select_items div:hover, .same-as-selected {
-//     background-color: rgba(0, 0, 0, 0.1);
-//   }
-// }
-
