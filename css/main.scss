@@ -18,16 +18,6 @@
     line-height: 1.4;
   }
   
-  /*
-   * Remove text-shadow in selection highlight:
-   * https://twitter.com/miketaylr/status/12228805301
-   *
-   * Vendor-prefixed and regular ::selection selectors cannot be combined:
-   * https://stackoverflow.com/a/16982510/7133471
-   *
-   * Customize the background color to match your design.
-   */
-  
   ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -96,7 +86,7 @@
   }
   
   /* ==========================================================================
-     Author's custom styles
+     Custom styles
      ========================================================================== */
   
   /* ==========================================================================
@@ -182,87 +172,10 @@
     clear: both;
   }
   
-  /* ==========================================================================
-     EXAMPLE Media Queries for Responsive Design.
-     These examples override the primary ('mobile first') styles.
-     Modify as content requires.
-     ========================================================================== */
-  
-  @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-  }
-  
-  @media print,
-    (-webkit-min-device-pixel-ratio: 1.25),
-    (min-resolution: 1.25dppx),
-    (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-  }
   
   /* ==========================================================================
-     Print styles.
-     Inlined to avoid the additional HTTP request:
-     https://www.phpied.com/delay-loading-your-print-css/
+     Main Style Starts
      ========================================================================== */
-  
-  @media print {
-    *,
-    *:before,
-    *:after {
-      background: transparent !important;
-      color: #000 !important;
-      /* Black prints faster */
-      box-shadow: none !important;
-      text-shadow: none !important;
-    }
-    a,
-    a:visited {
-      text-decoration: underline;
-    }
-    a[href]:after {
-      content: " (" attr(href) ")";
-    }
-    abbr[title]:after {
-      content: " (" attr(title) ")";
-    }
-    /*
-       * Don't show links that are fragment identifiers,
-       * or use the `javascript:` pseudo protocol
-       */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-      content: "";
-    }
-    pre {
-      white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-      border: 1px solid #999;
-      page-break-inside: avoid;
-    }
-    /*
-       * Printing Tables:
-       * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-       */
-    thead {
-      display: table-header-group;
-    }
-    tr,
-    img {
-      page-break-inside: avoid;
-    }
-    p,
-    h2,
-    h3 {
-      orphans: 3;
-      widows: 3;
-    }
-    h2,
-    h3 {
-      page-break-after: avoid;
-    }
-  }
   
   
 
@@ -281,7 +194,7 @@ body {
 #title {
   margin: auto;
   height: 150px;
-  width: 400px;
+  max-width: 400px;
   background-image: url('../img/title.svg');
   background-size: contain;
   background-repeat: no-repeat;
@@ -290,6 +203,8 @@ body {
 #controls {
   text-align: center;
   font-size: 1.5rem;
+  max-width: 900px;
+  margin: auto;
 }
 
 #lower {
@@ -299,23 +214,33 @@ body {
   text-align: center;
 }
 
-#selfie {
-  // position: absolute;
-  // right: 2rem;
-  float: right;
+#team_holder {
+  display: none;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #4f166f;
+    top: 0;
+    left: 0;
+    opacity: .8;
+    position: fixed;
+  }
 }
 
 #team {
-  display: none;
-  position: absolute;
-  left: 5%;
-  width: 90%;
-  height: 90%;
-  top: 10px;
-  min-height: 600px;
-  overflow: hidden;
   background: black;
   border-radius: 0.5rem;
+  left: calc(50% - 600px);
+  max-height: 600px;
+  max-width: 1200px;
+  min-height: 600px;
+  overflow: hidden;
+  position: absolute;
+  top: calc(50% - 300px);
+  width: 1200px;
+  z-index: 1;
 }
 
 #year {
@@ -353,7 +278,7 @@ body {
   display: inline-block;
   margin-right: 2rem;
   text-align: right;
-  width: 400px;
+  // width: 400px;
 
   .year {
     font-size: 1.5rem;
@@ -424,8 +349,14 @@ body {
   height: 90px;
   width: 90px;
   background-repeat: no-repeat;
-  background-size: contain;
-  :hover {
+  background-size: 85px;
+  background-position: center;
+  float: right;
+  transition: .25s;
+  
+  &:hover {
+    transition: .25s;
+    background-size: 90px;
     cursor: pointer;
   }
 
@@ -519,3 +450,20 @@ body {
     background-image: url('../img/gregors/2019.png');
   }
 }
+
+/* ==========================================================================
+     Media Queries
+   ========================================================================== */
+  
+     @media only screen and (min-width: 900px) {
+      .info {
+        width: 400px;
+      }
+    }
+     
+    @media only screen and (max-height: 780px) {
+      #team {
+        top: 0;
+      }
+    }
+    

@@ -139,11 +139,11 @@ document.querySelector('#random').addEventListener('click', (event)=>{
 })
 
 document.querySelector('#selfie').addEventListener('click', (event)=>{
-  let team = document.querySelector('#team');
+  let team = document.querySelector('#team_holder');
   team.style.display = team.style.display == "block" ? "none" : "block";
 })
 
-document.querySelector('#team').addEventListener('click', (event)=>{
+document.querySelector('#team_holder').addEventListener('click', (event)=>{
   event.target.display = "none";
   console.log('you clicked on team')
 })
