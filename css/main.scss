@@ -299,6 +299,25 @@ body {
   text-align: center;
 }
 
+#selfie {
+  // position: absolute;
+  // right: 2rem;
+  float: right;
+}
+
+#team {
+  display: none;
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  top: 10px;
+  min-height: 600px;
+  overflow: hidden;
+  background: black;
+  border-radius: 0.5rem;
+}
+
 #year {
   -webkit-appearance: initial;
   background: rgba(0, 0, 0, .2);
@@ -397,5 +416,106 @@ body {
   }
   &#year_2009 {
     background-image: url('../img/gregors/2009.png');
+  }
+}
+
+#selfie {
+  background-image: url('../img/photo_w.png');
+  height: 90px;
+  width: 90px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  :hover {
+    cursor: pointer;
+  }
+
+  #selfie_title {
+    margin: auto;
+    height: 150px;
+    width: 400px;
+    background-image: url('../img/title.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: calc(50% - 200px);
+    top: 20px;
+  }
+
+  .selfie_year {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: black;
+    display: inline-block;
+    height: 500px;
+    position: absolute;
+    vertical-align: middle;
+    width: 250px;
+    z-index: 1;
+    background-position: top;
+  }
+
+  #selfie_2009 {
+    background-image: url('../img/gregors/2009.png');
+    left: 29%;
+    top: 241px;
+    width: 200px;
+    z-index: 3;
+  }
+  #selfie_2011 {
+    background-image: url('../img/gregors/2011.png');
+    left: 37%;
+    top: 135px;
+    width: 100px;
+  }
+  #selfie_2012 {
+    background-image: url('../img/gregors/2012.png');
+    left: 43%;
+    top: 135px;
+    width: 114px;
+    z-index: 1;
+  }
+  #selfie_2013 {
+    top: 135px;
+    width: 183px;
+    left: 49%;
+    z-index: 0;
+    background-image: url('../img/gregors/2013.png');
+  }
+  #selfie_2014 {
+    left: 29%;
+    top: 121px;
+    width: 127px;
+    z-index: 0;
+    background-image: url('../img/gregors/2014.png');
+  }
+  #selfie_2016 {
+    left: 41%;
+    width: 154px;
+    top: 226px;
+    z-index: 2;
+    background-image: url('../img/gregors/2016.png');
+  }
+  
+  #selfie_2017 {
+    width: 148px;
+    left: 49%;
+    top: 232px;
+    z-index: 1;
+    background-image: url('../img/gregors/2017.png');
+  }
+  #selfie_2018 {
+    z-index: 2;
+    left: 53%;
+    top: 363px;
+    width: 200px;
+    background-image: url('../img/gregors/2018.png');
+  }
+  #selfie_2019 {
+    top: 368px;
+    left: 41%;
+    width: 171px;
+    z-index: 3;
+    background-image: url('../img/gregors/2019.png');
   }
 }

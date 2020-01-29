@@ -137,3 +137,14 @@ document.querySelector('#random').addEventListener('click', (event)=>{
   console.log('you clicked random');
   do_random();
 })
+
+document.querySelector('#selfie').addEventListener('click', (event)=>{
+  let team = document.querySelector('#team');
+  team.style.display = team.style.display == "block" ? "none" : "block";
+})
+
+document.querySelector('#team').addEventListener('click', (event)=>{
+  event.target.display = "none";
+  console.log('you clicked on team')
+})
+
