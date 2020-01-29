@@ -22,10 +22,12 @@ const saveGregors = (data) => {
   processGregor();
 }
 
-const loadMenu = () => {
+// pass latest_year_first value to show current year on page load
+const loadMenu = (latest_year_first) => {
   let yearData = `<option value="All">All</option>`;
   let raw_api_sorted = raw_api.sort(function(a, b){return b.year.S - a.year.S});
   console.log('this is sorted', raw_api_sorted)
+
   raw_api_sorted.forEach((element, i) => {
     if (i === 0) {
       yearData += `<option value="${element.year.S}" selected>${element.year.S}</option>`;
@@ -35,6 +37,7 @@ const loadMenu = () => {
   })
   console.log('yeardata', yearData)
   document.querySelector('#year').innerHTML = yearData;
+
 }
 
 // run when raw data is grabbed from API
@@ -47,6 +50,7 @@ const processGregor = () => {
     };
   });
   console.log('all gregor year after loop', all_gregors)
+  do_random()
 
 }
 
@@ -117,6 +121,7 @@ const loadGregor = (value) => {
 }
 
 const do_random = () => {
+  console.log('this is all gregors', all_gregors)
   let keys = Object.keys(all_gregors)
   let random = all_gregors[keys[ keys.length * Math.random() << 0]];
   console.log('this is the random', random.year)

@@ -293,9 +293,10 @@ body {
 }
 
 #lower {
-  text-align: center;
   background-color: rgba($color: #fff, $alpha: .2);
+  min-height: 532px;
   padding: 1rem;
+  text-align: center;
 }
 
 #year {

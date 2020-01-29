@@ -1,3 +1,3 @@
 # To Do
-* Start page load with a random Gregor
+* Set display none loading
 * Create Yearbook shot
