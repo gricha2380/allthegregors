@@ -231,7 +231,7 @@ body {
 
 #team {
   background: black;
-  border-radius: 0.5rem;
+  border-radius: 50%;
   left: calc(50% - 600px);
   max-height: 600px;
   max-width: 1200px;
@@ -464,6 +464,7 @@ body {
     @media only screen and (max-height: 780px) {
       #team {
         top: 0;
+        border-radius: 0.5rem;
       }
     }
     

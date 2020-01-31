@@ -63,12 +63,10 @@ const loadGregor = (value) => {
     console.log('custom year value provided')
     year = value;
     document.querySelector(`#year [value="${value}"]`).selected = true;
-
   } else {
     year = document.querySelector('#year').value;
   }
   console.log('year is', year)
-  
 
   const process_year = (value) => {
     console.log('all gregor current year value', all_gregors[year])
@@ -110,13 +108,11 @@ const loadGregor = (value) => {
   }
 
   if (year === 'All') {
-    // process_year(all_gregors[year])
     console.log('you selected all years')
     process_all_years()
   } else {
     process_year(year)
   }
-
 
 }
 
@@ -147,4 +143,3 @@ document.querySelector('#team_holder').addEventListener('click', (event)=>{
   event.target.display = "none";
   console.log('you clicked on team')
 })
-
