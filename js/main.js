@@ -80,7 +80,7 @@ const loadGregor = (value) => {
             ${all_gregors[year].description} 
         </div>
       </div>
-      <div class="avatar" id="year_${year}"></div>
+      <div class="avatar" id="year_${year}" style="background-image: url('../img/gregors/${year}.png');"></div>
     </div>
     `
     document.querySelector('#lower').innerHTML = content;
@@ -89,7 +89,7 @@ const loadGregor = (value) => {
   const process_all_years = () => {
     let content = ``;
     for (const element in all_gregors) {
-      console.log('this is element in all loop', element.title)
+      console.log('this is element in all loop', element, element.title)
 
       content += `
       <div class="its_gregor" data-year="${all_gregors[element].year}">
@@ -100,7 +100,7 @@ const loadGregor = (value) => {
               ${all_gregors[element].description} 
           </div>
         </div>
-        <div class="avatar" id="year_${all_gregors[element].year}"></div>
+        <div class="avatar" id="year_${all_gregors[element].year}" style="background-image: url('../img/gregors/${all_gregors[element].year}.png');"></div>
       </div>
       `
     }

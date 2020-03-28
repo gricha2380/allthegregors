@@ -407,9 +407,9 @@ body {
     z-index: 1;
   }
   #selfie_2013 {
-    top: 135px;
+    top: 130px;
     width: 183px;
-    left: 49%;
+    left: 51%;
     z-index: 0;
     background-image: url('../img/gregors/2013.png');
   }
@@ -448,6 +448,14 @@ body {
     width: 171px;
     z-index: 3;
     background-image: url('../img/gregors/2019.png');
+  }
+
+  #selfie_2020 {
+    width: 138px;
+    left: 55%;
+    top: 245px;
+    z-index: 1;
+    background-image: url('../img/gregors/2020.png');
   }
 }
 
