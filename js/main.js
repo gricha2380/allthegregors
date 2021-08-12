@@ -20,6 +20,7 @@ const saveGregors = (data) => {
   raw_api = data;
   loadMenu();
   processGregor();
+  checkParams();
 }
 
 // pass latest_year_first value to show current year on page load
@@ -62,7 +63,16 @@ const loadGregor = (value) => {
   if (value) {
     console.log('custom year value provided')
     year = value;
-    document.querySelector(`#year [value="${value}"]`).selected = true;
+    let menuYear = document.querySelector(`#year [value="${value}"]`);
+    if (menuYear) {
+      menuYear.selected = true;
+    }
+    else {
+      year = document.querySelector('#year').value;
+      let fullURLParams = new URLSearchParams(window.location.search);
+      fullURLParams.set("year","")
+      window.location.search = fullURLParams.toString();
+    }
   } else {
     year = document.querySelector('#year').value;
   }
@@ -122,6 +132,15 @@ const do_random = () => {
   let random = all_gregors[keys[ keys.length * Math.random() << 0]];
   console.log('this is the random', random.year)
   loadGregor(random.year);
+}
+
+const checkParams = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const yearURL = urlParams.get('year');
+  if (yearURL) {
+    console.log(`Year found in URL: ${yearURL}`);
+    loadGregor(yearURL); 
+  }
 }
 
 document.querySelector('#year').addEventListener('change', (event)=>{

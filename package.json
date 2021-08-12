@@ -1,0 +1,21 @@
+{
+  "name": "gregors",
+  "version": "1.0.0",
+  "description": "A small showcase for the various avatars I've made over the years. Data is pulled dynamically from a DynamoDB database, and retrieved through an API Gateway endpoint. Site is hosted serverlessly through S3, and SSL provided through CloudFront.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "aws s3 cp . s3://allthegregors.gregorrichardson.com --recursive --exclude '.git/*' --exclude '.vscode/*' --exclude package.json --exclude .DS_Store --acl public-read --profile personal",
+    "refresh": "aws cloudfront create-invalidation --distribution-id E3IY6TWUU9KIU3 --paths '/*' --profile personal",
+    "deploynow": "npm run deploy && npm run refresh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gricha2380/allthegregors.git"
+  },
+  "author": "Gregor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gricha2380/allthegregors/issues"
+  },
+  "homepage": "https://github.com/gricha2380/allthegregors#readme"
+}

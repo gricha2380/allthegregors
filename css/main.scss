@@ -360,6 +360,20 @@ body {
     cursor: pointer;
   }
 
+  &:before {
+    content: "Class Photo";
+    display: inline-block;
+    width: 100px;
+    margin-left: 75px;
+    font-family: sans-serif;
+    opacity: .5;
+    text-transform: none;
+    word-wrap: revert;
+    white-space: pre-wrap;
+    margin-top: 33px;
+    line-height: normal;
+}
+
   #selfie_title {
     margin: auto;
     height: 150px;
@@ -444,7 +458,7 @@ body {
   }
   #selfie_2019 {
     top: 368px;
-    left: 41%;
+    left: 29%;
     width: 171px;
     z-index: 3;
     background-image: url('../img/gregors/2019.png');
@@ -456,6 +470,14 @@ body {
     top: 245px;
     z-index: 1;
     background-image: url('../img/gregors/2020.png');
+  }
+  
+  #selfie_2021 {
+    width: 182px;
+    left: 41%;
+    top: 368px;
+    z-index: 3;
+    background-image: url('../img/gregors/2021.png');
   }
 }
 
