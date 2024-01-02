@@ -6,7 +6,11 @@
   "scripts": {
     "deploy": "aws s3 cp . s3://allthegregors.gregorrichardson.com --recursive --exclude '.git/*' --exclude '.vscode/*' --exclude package.json --exclude .DS_Store --acl public-read --profile personal",
     "refresh": "aws cloudfront create-invalidation --distribution-id E3IY6TWUU9KIU3 --paths '/*' --profile personal",
-    "deploynow": "npm run deploy && npm run refresh"
+    "deploynow": "npm run deploy && npm run refresh",
+    "db_new_year": "cp db/entry_template.json db/entry-$(date +%Y).json",
+    "db_update_basic": "aws dynamodb put-item --table-name $ALL_THE_GREGORS_DB_TABLE_NAME --item file://db/entry.json",
+    "db_update": "read -p \"Enter a file name: \" filename && aws dynamodb put-item --table-name $ALL_THE_GREGORS_DB_TABLE_NAME --item file://db/$filename && echo \"Update Complete.\"",
+    "test": "read -p \"Enter a file name: \" filename && echo \"You entered: $filename\""
   },
   "repository": {
     "type": "git",

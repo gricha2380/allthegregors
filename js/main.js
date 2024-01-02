@@ -10,7 +10,7 @@
 
 fetch('https://7prnxckt9k.execute-api.us-east-1.amazonaws.com/Prod')
 .then((resp) => resp.json())
-.then((data) => saveGregors(data))
+.then((data) => saveGregors(data));
 
 let all_gregors = {};
 let raw_api = [];
@@ -160,5 +160,5 @@ document.querySelector('#selfie').addEventListener('click', (event)=>{
 
 document.querySelector('#team_holder').addEventListener('click', (event)=>{
   event.target.display = "none";
-  console.log('you clicked on team')
+  console.log('you clicked on team');
 })

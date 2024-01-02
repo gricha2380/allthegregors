@@ -1,0 +1,2 @@
+# ignore everything in /db directory except for the file called "entry_template.json"
+/db/*!/db/entry_template.json
